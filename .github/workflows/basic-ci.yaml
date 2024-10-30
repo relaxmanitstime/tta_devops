@@ -61,13 +61,13 @@ jobs:
           poetry run pytest --cov=./ --cov-report=xml
         continue-on-error: true
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          flags: ${{ env.PROJECT_DIR }}
-          file: ${{ env.PROJECT_DIR }}/coverage.xml
-          name: ${{ env.PROJECT_DIR }}-coverage-report
+      # - name: Upload coverage to Codecov
+      #   uses: codecov/codecov-action@v3
+      #   with:
+      #     token: ${{ secrets.CODECOV_TOKEN }}
+      #     flags: ${{ env.PROJECT_DIR }}
+      #     file: ${{ env.PROJECT_DIR }}/coverage.xml
+      #     name: ${{ env.PROJECT_DIR }}-coverage-report
 
   build:
     runs-on: ubuntu-latest
